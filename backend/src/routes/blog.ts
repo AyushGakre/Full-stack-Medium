@@ -31,7 +31,7 @@ blogRoute.use('/*', async(c,next)=>{
 // post blog
 blogRoute.post('/', async(c) => {
     const body = await c.req.json();
-    const success = createPostinput.safeParse(body);
+    const success = createPostinput.safeParse(body).success;
     if(!success){
       return c.json({
         message: "Invalid acc to zod"
@@ -62,7 +62,7 @@ blogRoute.post('/', async(c) => {
 // update the blog by passing id
 blogRoute.put('/', async(c) =>{
     const body = await c.req.json();
-    const success = updatepostInput.safeParse(body);
+    const success = updatepostInput.safeParse(body).success;
     if(!success){
       return c.json({
         message: "Invalid acc to zod"
