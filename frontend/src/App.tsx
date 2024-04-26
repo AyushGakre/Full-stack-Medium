@@ -5,7 +5,6 @@ import Signin from './pages/Signin'
 import Signup from './pages/Signup'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>
