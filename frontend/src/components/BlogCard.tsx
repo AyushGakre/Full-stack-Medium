@@ -12,14 +12,14 @@ const BlogCard = ({
     publishedDate
 }:Blogdetails) => {
   return (
-    <div>
+    <div className=" max-w-lg border-b-2">
         <div>
            <Avatar name={authorName}/> {authorName} . {publishedDate}
         </div>
-        <div className=" font-semibold text-2xl mb-2">
+        <div className="font-medium text-2xl mb-2">
             {title}
         </div>
-        <div className=" font-sans">
+        <div className=" font-serif font-light">
             {content.slice(0,100) + "...."}
         </div>
 
@@ -30,8 +30,8 @@ const BlogCard = ({
 export function Avatar({name}:{name :string}){
     return(
        
-<div className="relative inline-flex items-center justify-center w-7 h-7 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
-    <span className="font-medium text-gray-600 dark:text-gray-300">{name[0]}</span>
+<div className="relative inline-flex items-center justify-center w-6 h-6 overflow-hidden bg-gray-100 rounded-full dark:bg-gray-600">
+    <span className=" font-extralight text-gray-600 dark:text-gray-300">{name[0]}</span>
 </div>
 
     )
