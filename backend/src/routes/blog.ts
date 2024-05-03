@@ -95,8 +95,17 @@ blogRoute.get('/Bulk', async(c) =>{
     const prisma = new PrismaClient({
         datasourceUrl: c.env.DATABASE_URL,
     }).$extends(withAccelerate())
+    try{
     const posts = await prisma.post.findMany()
     return c.json(posts);
+    }
+    catch(error){
+        c.status(401)
+        return c.json({
+            message: "You are not logged"
+        })
+    }
+    
 })
 // get blog by id
 blogRoute.get('/:id', async (c) =>{
