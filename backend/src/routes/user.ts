@@ -74,9 +74,7 @@ userRoute.post('/signin', async(c) =>{
   const token = await sign({
     id: user.id,
   },c.env.mySecret)
-  return c.json({
-    message: "Logged In"
-  })
+  return c.text(token)
   }
   catch(e){
     return c.json({

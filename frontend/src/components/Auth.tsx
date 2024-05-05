@@ -16,10 +16,13 @@ const Auth = ({type}: {type : "signin" | "signup"}) => {
     )
     const request = async() =>{
         try{
-        const response  = await axios.post(`${BACKEND_URL}/api/v1/user/${type === 'signin'? "signin": "signup"}`,postInput)
+        const response  = await axios.post(`${BACKEND_URL}/api/v1/user/${type === 'signin'? "signin": "signup"}`,{
+            postInput
+        })
         const jwt = response.data;
-        // localStorage.setItem("token",jwt)
-        navigate('/blog')
+        alert(jwt)
+        localStorage.setItem("token",jwt)
+        navigate('/blogs')
     }
     catch{
         alert("check credentials")

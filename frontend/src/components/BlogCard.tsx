@@ -12,7 +12,7 @@ const BlogCard = ({
     publishedDate
 }:Blogdetails) => {
   return (
-    <div className=" max-w-lg border-b-2">
+    <div className=" w-96 border-b-2">
         <div>
            <Avatar name={authorName}/> {authorName} . {publishedDate}
         </div>

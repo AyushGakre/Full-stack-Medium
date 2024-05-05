@@ -16,7 +16,7 @@ const Blogs = () => {
    useEffect(()=>{
     axios.get(`${BACKEND_URL}/api/v1/blog/Bulk`,{
       headers:{
-        Authorization: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6OX0.TwtNgO6OSBjoG63630iOz6XtiqFvNjBfY2d8H6k8ASY"
+        Authorization: localStorage.getItem("token")
       }
     })
     .then(response=>{
@@ -27,7 +27,7 @@ const Blogs = () => {
   return (
     <>
     <Navbar/>
-    <div className="flex flex-col space-y-4 items-center mt-10 ">
+    <div className="flex flex-col space-y-4 items-center mt-10">
       {blogs.map(blog =><BlogCard
          key={blog.id}
         authorName="ayush"
